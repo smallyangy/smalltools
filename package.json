@@ -1,0 +1,50 @@
+{
+  "name": "smalltools",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts}": "eslint --fix",
+    "*.{vue,scss,css}": "stylelint --cache --fix"
+  },
+  "dependencies": {
+    "ant-design-vue": "^3.0.0-beta.3",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/compiler-sfc": "^3.0.5",
+    "commitizen": "^4.2.4",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-vue": "^7.20.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.1.4",
+    "sass": "^1.45.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.21.0",
+    "typescript": "^4.4.3",
+    "vite": "^2.2.3",
+    "vue-eslint-parser": "^7.11.0",
+    "vue-tsc": "^0.30.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
