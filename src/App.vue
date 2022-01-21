@@ -3,9 +3,9 @@
         <a-layout-header class="header">
             <div style="display: flex;">
                 <router-link to="/">
-                    <div class="logo">
+                    <h1 class="logo">
                         Welcome 小工具
-                    </div>
+                    </h1>
                 </router-link>
                 <!-- <a-menu
                     theme="dark"
@@ -19,16 +19,25 @@
             </div>
         </a-layout-header>
         <a-layout>
-            <a-layout-sider width="200" style="background: #fff;">
+            <a-layout-sider
+                width="200"
+                style="background: #fff;"
+            >
                 <a-menu
                     v-model:selectedKeys="selectedKeys"
                     v-model:openKeys="openKeys"
                     mode="inline"
                     :style="{ height: '100%', borderRight: 0 }"
                 >
-                    <template v-for="(item) in routes" :key="item.name">
+                    <template
+                        v-for="(item) in routes"
+                        :key="item.name"
+                    >
                         <!-- 有二级菜单 -->
-                        <a-sub-menu v-if="item.children && item.children.length > 0" :key="item.name">
+                        <a-sub-menu
+                            v-if="item.children && item.children.length > 0"
+                            :key="item.name"
+                        >
                             <template #title>
                                 <span>
                                     <Icon :icon="item.meta.icon || ''"></Icon>
@@ -36,14 +45,20 @@
                                 </span>
                             </template>
                             <!-- 子菜单 -->
-                            <a-menu-item v-for="(child) in item.children" :key="child.name">
+                            <a-menu-item
+                                v-for="(child) in item.children"
+                                :key="child.name"
+                            >
                                 <router-link :to="{name: child.name}">
                                     {{ child?.meta?.title }}
                                 </router-link>
                             </a-menu-item>
                         </a-sub-menu>
                         <!-- 无二级菜单 -->
-                        <a-menu-item v-else :key="item.name">
+                        <a-menu-item
+                            v-else
+                            :key="item.name"
+                        >
                             <router-link :to="{name: item.name}">
                                 <Icon :icon="item.meta.icon || ''"></Icon>
                                 {{ item.meta?.title }}
@@ -52,7 +67,10 @@
                     </template>
                 </a-menu>
             </a-layout-sider>
-            <a-layout class="body" style="padding: 24px 24px 24px;">
+            <a-layout
+                class="body"
+                style="padding: 24px 24px 24px;"
+            >
                 <!-- <a-breadcrumb style="margin: 16px 0;">
                     <a-breadcrumb-item>Home</a-breadcrumb-item>
                     <a-breadcrumb-item>List</a-breadcrumb-item>
@@ -81,9 +99,11 @@
     const openKeys = ref<[string|symbol]>(['']);
     watch(router, () => {
         // 处理刷新问题
+        // 选中菜单
         selectedKeys.value = [router.name || ''];
         const matched = router.matched;
         if (matched.length > 1) {
+            // 展开一级
             openKeys.value = [matched[0].name || ''];
         }
     });

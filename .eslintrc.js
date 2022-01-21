@@ -27,7 +27,8 @@ module.exports = {
         quotes: ['error', 'single'],
         'comma-dangle': ['error', 'always-multiline'],
         'object-curly-spacing': ['error', 'always'],
-        'max-len': ['error', 120],
+        'vue/max-len': 0,
+        'max-len': 0,
         'no-new': 'off',
         'linebreak-style': 'off',
         'import/extensions': 'off',
@@ -83,9 +84,9 @@ module.exports = {
             baseIndent: 1,
         }],
         'vue/html-self-closing': 'off',
-        'vue/max-attributes-per-line': ['warn', {
+        'vue/max-attributes-per-line': ['error', {
             singleline: {
-                max: 3,
+                max: 1,
                 allowFirstLine: true,
             },      
             multiline: {

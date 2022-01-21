@@ -39,6 +39,35 @@ export const routes: Array<CustomRoutes> = [
             },
         ],
     },
+    {
+        path: '/searchtool',
+        name: 'SearchTool',
+        component: () => import('@/views/search-tool/index.vue'),
+        meta: {
+            title: '查询工具',
+            icon: 'SearchOutlined',
+        },
+        children: [
+            {
+                path: 'h5UrlSearch',
+                name: 'H5UrlSearch',
+                component: () => import('@/views/search-tool/h5UrlSearch.vue'),
+                meta: {
+                    title: 'h5地址查询',
+                    icon: '',
+                },
+            },
+            {
+                path: 'citySearch',
+                name: 'CitySearch',
+                component: () => import('@/views/search-tool/citySearch.vue'),
+                meta: {
+                    title: '城市查询',
+                    icon: '',
+                },
+            },
+        ],
+    },
 ];
 
 const router = createRouter({

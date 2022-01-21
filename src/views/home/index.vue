@@ -1,6 +1,13 @@
 <template>
-    home
-    <router-link to="/smalltool">小工具</router-link>
+    <a-calendar
+        :locale="{
+            lang: {
+                locale: 'zh',
+                month: '月',
+                year: '年'
+            }
+        }"
+    ></a-calendar>
 </template>
 
 <script lang="ts" setup>

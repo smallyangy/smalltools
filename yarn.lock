@@ -21,17 +21,7 @@
   resolved "https://registry.npmmirror.com/@ant-design/icons-svg/download/@ant-design/icons-svg-4.2.1.tgz#8630da8eb4471a4aabdaed7d1ff6a97dcb2cf05a"
   integrity sha1-hjDajrRHGkqr2u19H/apfcss8Fo=
 
-"@ant-design/icons-vue@^6.0.0":
-  version "6.0.1"
-  resolved "https://registry.npmmirror.com/@ant-design/icons-vue/download/@ant-design/icons-vue-6.0.1.tgz#9d804c3c74d2cfaf97cb18e582d3b9400934f5fd"
-  integrity sha1-nYBMPHTSz6+XyxjlgtO5QAk09f0=
-  dependencies:
-    "@ant-design/colors" "^5.0.0"
-    "@ant-design/icons-svg" "^4.0.0"
-    "@types/lodash" "^4.14.165"
-    lodash "^4.17.15"
-
-"@ant-design/icons-vue@^6.0.1":
+"@ant-design/icons-vue@^6.0.0", "@ant-design/icons-vue@^6.0.1":
   version "6.0.1"
   resolved "https://registry.nlark.com/@ant-design/icons-vue/download/@ant-design/icons-vue-6.0.1.tgz#9d804c3c74d2cfaf97cb18e582d3b9400934f5fd"
   integrity sha1-nYBMPHTSz6+XyxjlgtO5QAk09f0=
@@ -1434,7 +1424,7 @@ dargs@^7.0.0:
   resolved "https://registry.nlark.com/dargs/download/dargs-7.0.0.tgz?cache=0&sync_timestamp=1625033450449&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdargs%2Fdownload%2Fdargs-7.0.0.tgz#04015c41de0bcb69ec84050f3d9be0caf8d6d5cc"
   integrity sha1-BAFcQd4Ly2nshAUPPZvgyvjW1cw=
 
-dayjs@^1.10.5:
+dayjs@^1.10.5, dayjs@^1.10.7:
   version "1.10.7"
   resolved "https://registry.npmmirror.com/dayjs/download/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
   integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
