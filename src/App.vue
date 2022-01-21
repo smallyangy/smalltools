@@ -21,28 +21,35 @@
         <a-layout>
             <a-layout-sider width="200" style="background: #fff;">
                 <a-menu
+                    v-model:selectedKeys="selectedKeys"
+                    v-model:openKeys="openKeys"
                     mode="inline"
                     :style="{ height: '100%', borderRight: 0 }"
                 >
-                    <a-menu-item key="sub1">
-                        <template #icon>
-                            <home-outlined />
-                        </template>
-                        <router-link to="/">
-                            首页
-                        </router-link>
-                    </a-menu-item>
-                    <a-sub-menu key="sub2">
-                        <template #title>
-                            <span>
-                                <tool-outlined />
-                                小工具
-                            </span>
-                        </template>
-                        <a-menu-item key="5">
-                            <router-link to="/smalltool/articleToMini">文章转小程序链接</router-link>
+                    <template v-for="(item) in routes" :key="item.name">
+                        <!-- 有二级菜单 -->
+                        <a-sub-menu v-if="item.children && item.children.length > 0" :key="item.name">
+                            <template #title>
+                                <span>
+                                    <Icon :icon="item.meta.icon || ''"></Icon>
+                                    {{ item.meta?.title }}
+                                </span>
+                            </template>
+                            <!-- 子菜单 -->
+                            <a-menu-item v-for="(child) in item.children" :key="child.name">
+                                <router-link :to="{name: child.name}">
+                                    {{ child?.meta?.title }}
+                                </router-link>
+                            </a-menu-item>
+                        </a-sub-menu>
+                        <!-- 无二级菜单 -->
+                        <a-menu-item v-else :key="item.name">
+                            <router-link :to="{name: item.name}">
+                                <Icon :icon="item.meta.icon || ''"></Icon>
+                                {{ item.meta?.title }}
+                            </router-link>
                         </a-menu-item>
-                    </a-sub-menu>
+                    </template>
                 </a-menu>
             </a-layout-sider>
             <a-layout class="body" style="padding: 24px 24px 24px;">
@@ -62,7 +69,24 @@
 </template>
 
 <script lang="ts" setup>
-    import { HomeOutlined, ToolOutlined } from '@ant-design/icons-vue';
+    import Icon from '@/components/layout/Icon';
+    import { routes } from '@/router';
+    import { ref, watch } from 'vue';
+    import { useRoute } from 'vue-router';
+
+    const router = useRoute();
+    // 当前选择的菜单
+    const selectedKeys = ref<[string|symbol]>(['']);
+    // 当前展开
+    const openKeys = ref<[string|symbol]>(['']);
+    watch(router, () => {
+        // 处理刷新问题
+        selectedKeys.value = [router.name || ''];
+        const matched = router.matched;
+        if (matched.length > 1) {
+            openKeys.value = [matched[0].name || ''];
+        }
+    });
 </script>
 
 <style lang="scss">
