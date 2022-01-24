@@ -28,12 +28,37 @@
         allowClear
         @change="handleComputedMiniUrl"
     />
+    <div v-show="urlType === 1">
+        <a-input
+            v-model:value.trim="shareText"
+            allowClear
+            placeholder="输入分享语"
+            @change="handleComputedMiniUrl"
+        />
+        <a-input
+            v-model:value.trim="shareImg"
+            allowClear
+            placeholder="输入分享图"
+            @change="handleComputedMiniUrl"
+        />
+    </div>
     <a-card style="width: 100%;">
         <div
-            class="hover-class"
+            class="hover-class url-display"
             @click="handleCopy(switchUrl)"
         >
             {{ switchUrl }}
+        </div>
+    </a-card>
+    <a-card
+        title="首页二跳"
+        style="width: 100%;"
+    >
+        <div
+            class="hover-class url-display"
+            @click="handleCopy(homeRedirectUrl)"
+        >
+            {{ homeRedirectUrl }}
         </div>
     </a-card>
     <!-- 转换器 -->
@@ -119,14 +144,33 @@
     const urlType = ref<number>(1);
     const h5url = ref<string>('');
     const switchUrl = ref<string>('');
+    const homeRedirectUrl = ref<string>('');
+    const shareText = ref<string>('');
+    const shareImg = ref<string>('');
 
     const handleComputedMiniUrl = () => {
         const prefix = dataSource.value.find(item => item.key === urlType.value);
         if (!prefix) return;
         switchUrl.value = `${prefix.url}${encodeURIComponent(h5url.value)}`;
+        const homePathMap = new Map()
+            .set(1, '/pages/index')
+            .set(2, '/pages/index/index')
+            .set(3, '/pages/index/index')
+            .set(4, '/pages/index/index')
+            .set(5, '/pages/index/index');
+
+        if (urlType.value === 1) {
+            // 城市版增加分享语，分享图
+            if (shareText.value) switchUrl.value += `&title=${encodeURIComponent(shareText.value)}`;
+            if (shareImg.value) switchUrl.value += `&cover=${encodeURIComponent(shareImg.value)}`;
+        }
+        homeRedirectUrl.value = `${homePathMap.get(urlType.value)}?redirect=${encodeURIComponent(switchUrl.value)}`;
     };
+    handleComputedMiniUrl();
 </script>
 
 <style lang="scss">
-
+    .url-display {
+        word-break: break-all;
+    }
 </style>
