@@ -42,6 +42,8 @@ function h5ClipboardData({
         if (result) {
             success && success();
         }
+        // 移除textarea
+        document.body.removeChild(textarea);
     } catch (_) {
         fail && fail();
     } finally {

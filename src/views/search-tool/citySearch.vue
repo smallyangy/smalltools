@@ -98,11 +98,4 @@
 
 <style lang="scss">
     @import '@/assets/styles/default.scss';
-
-    .hover-class {
-        &:hover {
-            color: $primary-color;
-            cursor: pointer;
-        }
-    }
 </style>

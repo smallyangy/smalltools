@@ -33,7 +33,7 @@ export const routes: Array<CustomRoutes> = [
                 name: 'ArticleToMini',
                 component: () => import('@/views/small-tool/articleToMiniLink.vue'),
                 meta: {
-                    title: '文章转小程序链接',
+                    title: 'h5转小程序链接',
                     icon: '',
                 },
             },

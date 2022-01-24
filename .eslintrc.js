@@ -71,6 +71,7 @@ module.exports = {
         'no-case-declarations': 'off',
         'template-curly-spacing': 'off',
         'vue/valid-v-for': 'off',
+        'vue/attribute-hyphenation': 'off',
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         'no-empty': 'off',

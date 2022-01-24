@@ -87,7 +87,7 @@
 </template>
 
 <script lang="ts" setup>
-    import Icon from '@/components/layout/Icon';
+    import Icon from '@/components/layout/Icon.js';
     import { routes } from '@/router';
     import { ref, watch } from 'vue';
     import { useRoute } from 'vue-router';
@@ -110,6 +110,8 @@
 </script>
 
 <style lang="scss">
+    @import "@/assets/styles/global.scss";
+
     .logo {
         font-size: 20px;
         color: white;
