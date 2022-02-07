@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 import Home from '@/views/home/index.vue';
 
@@ -81,7 +81,7 @@ export const routes: Array<CustomRoutes> = [
 
 const router = createRouter({
     // createWebHistory(base) 
-    history: createWebHistory('/smalltools'),
+    history: createWebHashHistory('/smalltools'),
     routes,
 });
 
