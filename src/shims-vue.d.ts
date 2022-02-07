@@ -7,3 +7,4 @@ declare module '*.vue' {
 }
 
 declare module '@/components/layout/Icon.js';
+declare module 'jsoneditor/dist/jsoneditor.min.js';

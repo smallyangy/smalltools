@@ -1,13 +1,6 @@
 <template>
     <!-- 标题 -->
-    <a-page-header
-        style="border: 1px solid rgb(235, 237, 240);"
-        title="城市查询"
-        :avatar="{
-            src: 'https://portrait.gitee.com/uploads/avatars/user/574/1724829_SmallYangY_1615976108.png'
-        }"
-        sub-title=""
-    />
+    <HeaderTitle></HeaderTitle>
     <!-- 推荐城市  -->
     <a-card title="推荐城市">
         <a-card-grid
@@ -42,6 +35,7 @@
     import { reactive } from 'vue';
     import clipboard from '@/utils/clipboard';
     import { message } from 'ant-design-vue';
+    import HeaderTitle from '@/components/layout/HeaderTitle.vue';
 
     const recommendCitys = reactive([
         {

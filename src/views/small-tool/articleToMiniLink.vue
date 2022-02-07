@@ -1,13 +1,6 @@
 <template>
     <!-- 标题 -->
-    <a-page-header
-        style="border: 1px solid rgb(235, 237, 240);"
-        title="h5转小程序链接"
-        :avatar="{
-            src: 'https://portrait.gitee.com/uploads/avatars/user/574/1724829_SmallYangY_1615976108.png'
-        }"
-        sub-title=""
-    />
+    <HeaderTitle></HeaderTitle>
     <!-- 转换器 -->
     <a-select
         v-model:value="urlType"
@@ -90,6 +83,7 @@
     import clipboard from '@/utils/clipboard';
     import { message } from 'ant-design-vue';
     import Icon from '@/components/layout/Icon.js';
+    import HeaderTitle from '@/components/layout/HeaderTitle.vue';
 
     const dataSource = ref([
         {

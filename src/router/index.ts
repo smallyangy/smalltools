@@ -37,6 +37,15 @@ export const routes: Array<CustomRoutes> = [
                     icon: '',
                 },
             },
+            {
+                path: 'jsonTool',
+                name: 'JsonTool',
+                component: () => import('@/views/small-tool/jsonTool.vue'),
+                meta: {
+                    title: 'json工具',
+                    icon: '',
+                },
+            },
         ],
     },
     {
