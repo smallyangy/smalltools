@@ -46,6 +46,15 @@ export const routes: Array<CustomRoutes> = [
                     icon: '',
                 },
             },
+            {
+                path: 'dataDecrypto',
+                name: 'DataDecrypto',
+                component: () => import('@/views/small-tool/dataDecrypto.vue'),
+                meta: {
+                    title: '数据解析工具',
+                    icon: '',
+                },
+            },
         ],
     },
     {

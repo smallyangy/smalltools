@@ -30,9 +30,9 @@ config: 构建过程或辅助工具的变动
 chore: 其他改动
 ```
 
-## 使用antv
+## 使用antd-vue
 
-[文档](https://next.antdv.com/components)
+[文档](https://next.antdv.com/docs/vue/introduce-cn)
 
 安装
 
