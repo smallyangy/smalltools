@@ -1,6 +1,6 @@
 <template>
     <DataInput
-        title1="header[Api-Secret-Sign]"
+        title1="Api-Secret-Sign"
         title2="data数据"
         type="national"
     ></DataInput>

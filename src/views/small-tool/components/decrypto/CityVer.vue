@@ -1,6 +1,6 @@
 <template>
     <DataInput
-        title1="header[api-secret-sign]"
+        title1="api-secret-sign"
         title2="data数据"
         type="city"
     ></DataInput>

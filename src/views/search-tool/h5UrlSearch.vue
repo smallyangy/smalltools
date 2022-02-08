@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
     import HeaderTitle from '@/components/layout/HeaderTitle.vue';
-    import crypto from '@/utils/crypto2.js';
+    import crypto from '@/utils/crypto.js';
 
     // 测试城市版解码
     const apiSecretSign = 'IdQ1lmLEB78J1VHvVAMytEoqPXMcKsqjBNAIVGMGYYzjVJhg4/i86i7JluuO2GWbJI2aKsR4oJ7PhFvB9EYWPYMWYuRdgwz1NSrdrZ5eKh4Ngqjpawp1ztjR3lMsSUy6EcmLkwTZ78PKUNAz1RKtlR/vX7JGsIk/83Zp6NyywjY=';
