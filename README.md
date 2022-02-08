@@ -32,6 +32,8 @@ chore: 其他改动
 
 ## 使用antv
 
+[文档](https://next.antdv.com/components)
+
 安装
 
 ```
@@ -49,3 +51,39 @@ import Antd from 'ant-design-vue';
 
 .use(Antd)
 ```
+
+## 遇到的问题记录
+### 【解决】vite不支持commonjs语法
+
+安装插件
+
+```shell
+yarn add @originjs/vite-plugin-commonjs -D
+```
+
+vite.config.js
+
+```javascript
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
+
+export default defineConfig({
+    // ...
+    plugins: [
+        // 解决dev环境commonjs无法识别的问题
+        viteCommonjs(),
+        vue(),
+    ],
+    build: {
+        commonjsOptions: {
+            // 解决打包commonjs无法识别的问题
+            transformMixedEsModules: true,
+        },
+    },
+});
+```
+
+
+
+
+
+

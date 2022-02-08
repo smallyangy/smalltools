@@ -8,3 +8,4 @@ declare module '*.vue' {
 
 declare module '@/components/layout/Icon.js';
 declare module 'jsoneditor/dist/jsoneditor.min.js';
+declare module '@/utils/crypto2.js';

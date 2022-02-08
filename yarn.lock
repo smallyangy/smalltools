@@ -465,6 +465,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@originjs/vite-plugin-commonjs@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/@originjs/vite-plugin-commonjs/-/vite-plugin-commonjs-1.0.2.tgz#09cb0a3b161880cbffc4917ca07f3932249ea9e2"
+  integrity sha512-LOu451x8Ec2DgupeXkjlPKtmGYoSHSwWt9nPktBaMjPC8klQ0YZhNduoNb9jhg7lSHzvEIv9f+UDaV998fEkpw==
+  dependencies:
+    esbuild "^0.13.15"
+
 "@simonwep/pickr@~1.8.0":
   version "1.8.2"
   resolved "https://registry.npmmirror.com/@simonwep/pickr/download/@simonwep/pickr-1.8.2.tgz#96dc86675940d7cad63d69c22083dd1cbb9797cb"
@@ -1783,7 +1790,7 @@ esbuild-windows-arm64@0.13.15:
   resolved "https://registry.npmmirror.com/esbuild-windows-arm64/download/esbuild-windows-arm64-0.13.15.tgz#482173070810df22a752c686509c370c3be3b3c3"
   integrity sha512-zzvyCVVpbwQQATaf3IG8mu1IwGEiDxKkYUdA4FpoCHi1KtPa13jeScYDjlW0Qh+ebWzpKfR2ZwvqAQkSWNcKjA==
 
-esbuild@^0.13.12:
+esbuild@^0.13.12, esbuild@^0.13.15:
   version "0.13.15"
   resolved "https://registry.npmmirror.com/esbuild/download/esbuild-0.13.15.tgz#db56a88166ee373f87dbb2d8798ff449e0450cdf"
   integrity sha512-raCxt02HBKv8RJxE8vkTSCXGIyKHdEdGfUmiYb8wnabnaEmHzyW7DCHb5tEN0xU8ryqg5xw54mcwnYkC4x3AIw==
