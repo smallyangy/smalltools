@@ -2,16 +2,25 @@
     <a-form
         ref="formRef"
         :model="form"
-        :label-col="{ span: 4 }"
-        :wrapper-col="{ span: 20 }"
+        :label-col="{ style: { width: '180px' } }"
         :rules="rules"
         @finish="onFinish"
         @finishFailed="onFinishFailed"
     >
         <a-form-item
-            :label="props.title1"
             name="txt1"
         >
+            <template #label>
+                {{ props.title1 }}
+                <a-button
+                    shape="circle"
+                    @click="handePaste('txt1')"
+                >
+                    <template #icon>
+                        <Icon icon="RightOutlined"></Icon>
+                    </template>
+                </a-button>
+            </template>
             <a-textarea
                 v-model:value.trim="form.txt1"
                 :placeholder="`请输入${props.title1}`"
@@ -19,16 +28,26 @@
             />
         </a-form-item>
         <a-form-item
-            :label="props.title2"
             name="txt2"
         >
+            <template #label>
+                {{ props.title2 }}
+                <a-button
+                    shape="circle"
+                    @click="handePaste('txt2')"
+                >
+                    <template #icon>
+                        <Icon icon="RightOutlined"></Icon>
+                    </template>
+                </a-button>
+            </template>
             <a-textarea
                 v-model:value.trim="form.txt2"
                 :placeholder="`请输入${props.title2}`"
                 :rows="8"
             />
         </a-form-item>
-        <a-form-item :wrapper-col="{ offset: 4, span: 20 }">
+        <a-form-item :wrapper-col="{ style: { marginLeft: '180px' } }">
             <a-button
                 type="primary"
                 danger
@@ -59,6 +78,7 @@
     import { message } from 'ant-design-vue';
     import JSONEditor from 'jsoneditor/dist/jsoneditor.min.js';
     import 'jsoneditor/dist/jsoneditor.min.css';
+    import Icon from '@/components/layout/Icon.js';
 
     const props = withDefaults(defineProps<{
         title1: string;
@@ -125,6 +145,16 @@
 
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
+    };
+
+    const handePaste = (key: 'txt1' | 'txt2') => {
+        try {
+            navigator.clipboard.readText().then(text => {
+                form[key] = text;
+            });
+        } catch (_) {
+            message.warning('当前浏览器不支持粘贴功能，请手动Ctrl+v');
+        }
     };
     
 </script>

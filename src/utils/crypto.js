@@ -1,5 +1,5 @@
-import CryptoJS from './crypto-js/index';
-import encrypt from './crypto-js/jsEncrypto.js';
+const CryptoJS = require('./crypto-js/index');
+const encrypt = require('./crypto-js/jsEncrypto.js');
 
 // 城市版私钥
 const privateKeyCity = `-----BEGIN PRIVATE KEY-----

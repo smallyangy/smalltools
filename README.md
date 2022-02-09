@@ -82,6 +82,7 @@ export default defineConfig({
 });
 ```
 
+若build时报错，尝试将引入的地方改为`require()`的形式引入
 
 
 
