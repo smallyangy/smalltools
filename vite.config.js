@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
+// import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,13 +14,13 @@ export default defineConfig({
     },
     plugins: [
         // 解决dev环境commonjs无法识别的问题
-        viteCommonjs(),
+        // viteCommonjs(),
         vue(),
     ],
-    build: {
-        commonjsOptions: {
-            // 解决打包commonjs无法识别的问题
-            transformMixedEsModules: true,
-        },
-    },
+    // build: {
+    //     commonjsOptions: {
+    //         // 解决打包commonjs无法识别的问题
+    //         transformMixedEsModules: true,
+    //     },
+    // },
 });

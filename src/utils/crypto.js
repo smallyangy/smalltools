@@ -1,5 +1,5 @@
-const CryptoJS = require('./crypto-js/index');
-const encrypt = require('./crypto-js/jsEncrypto.js');
+import JSEncrypt from 'jsencrypt';
+import CryptoJS from 'crypto-js';
 
 // 城市版私钥
 const privateKeyCity = `-----BEGIN PRIVATE KEY-----
@@ -26,7 +26,7 @@ gZ0YiX8CMe7GAcDg
  * @returns 
  */
 function decryptCityData(secretSign, content) {
-    const crypt = new encrypt.JSEncrypt();
+    const crypt = new JSEncrypt();
     crypt.setPrivateKey(privateKeyCity);
     const signStr = crypt.decrypt(secretSign);
     const signBuff = CryptoJS.enc.Utf8.parse(signStr);
@@ -52,7 +52,7 @@ yqPawKKn83DnC2vczaH4F5RVkT6On4GdGIl/AjHuxgHA4A==
 -----END RSA PRIVATE KEY-----`;
 
 function decryptNationalData(secretSign, content) {
-    const crypt = new encrypt.JSEncrypt();
+    const crypt = new JSEncrypt();
     crypt.setPrivateKey(privateKeyNational);
     const token = crypt.decrypt(secretSign);
     const signStr = token.split('|')[1];
