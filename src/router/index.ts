@@ -55,6 +55,15 @@ export const routes: Array<CustomRoutes> = [
                     icon: '',
                 },
             },
+            {
+                path: 'randomImg',
+                name: 'RandomImg',
+                component: () => import('@/views/small-tool/randomImg.vue'),
+                meta: {
+                    title: '生成随机图片',
+                    icon: '',
+                },
+            },
         ],
     },
     {
