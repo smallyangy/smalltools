@@ -59,6 +59,7 @@ module.exports = {
         'import/order': 'off',
         'no-trailing-spaces': 'off',
         'func-names': 'off',
+        'max-classes-per-file': 'off',
         radix: 'off',
         'no-unused-expressions': 'off',
         'no-underscore-dangle': 'off',
