@@ -4,4 +4,6 @@
 // import './4.decorator.ts';
 // import './5.adapt';
 // import './6.proxy';
-import './7.constructorAndstrategy';
+// import './7.constructorAndstrategy';
+// import './8.observer';
+// import './9.iterator';
