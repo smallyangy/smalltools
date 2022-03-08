@@ -142,7 +142,7 @@
 
         function endDeal() {
             loadingCount++;
-            if (loadingCount === (count - 1)) {
+            if (loadingCount === count) {
                 loading.value = false;
             }
         }
