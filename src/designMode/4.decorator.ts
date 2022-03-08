@@ -94,29 +94,29 @@
 /* ES7中的装饰器 */
 
 // 装饰类
-function classDecorator(target) {
-    target.hasDecorator = true;
-    return target;
-}
+// function classDecorator(target) {
+//     target.hasDecorator = true;
+//     return target;
+// }
 
-function funcDecorator(target, name, descriptor) {
-    const oldFunc = descriptor.value;
-    descriptor.value = function () {
-        console.log('我是Button新的逻辑');
-        return oldFunc.apply(this, arguments);
-    };
-    return descriptor;
-}
+// function funcDecorator(target, name, descriptor) {
+//     const oldFunc = descriptor.value;
+//     descriptor.value = function () {
+//         console.log('我是Button新的逻辑');
+//         return oldFunc.apply(this, arguments);
+//     };
+//     return descriptor;
+// }
 
-@classDecorator
-class Button {
-    @funcDecorator
-    onClick(text) {
-        console.log('我是Button的原有逻辑 ' + text);
-    }
-}
+// @classDecorator
+// class Button {
+//     @funcDecorator
+//     onClick(text) {
+//         console.log('我是Button的原有逻辑 ' + text);
+//     }
+// }
 
-const btn = new Button();
+// const btn = new Button();
 
-console.log(Button.hasDecorator);
-btn.onClick('123');
+// console.log(Button.hasDecorator);
+// btn.onClick('123');
