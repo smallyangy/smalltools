@@ -3,6 +3,7 @@ module.exports = {
     globals: {
         defineEmits: 'readonly',
         defineProps: 'readonly',
+        api: 'readonly',
     },
     extends: [
         'plugin:@typescript-eslint/recommended',
