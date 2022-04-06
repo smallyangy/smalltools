@@ -36,4 +36,7 @@
 </script>
 
 <style lang="scss">
+    .box {
+        font-size: 12px;
+    }
 </style>

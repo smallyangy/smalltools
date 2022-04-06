@@ -9,6 +9,7 @@
         "typescript"
     ],
     "eslint.alwaysShowStatus": true,
+    "stylelint.enable": true,
     "stylelint.validate": [
         "css",
         "less",
