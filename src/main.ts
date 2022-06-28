@@ -10,7 +10,7 @@ import { createPinia } from 'pinia';
 
 dayjs.locale('zh-cn');
 
-    const pinia = createPinia();
+const pinia = createPinia();
 
 createApp(App)
 .use(store)
