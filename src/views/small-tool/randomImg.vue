@@ -68,6 +68,7 @@
                 <a-image
                     :width="200"
                     :src="imgUrl"
+                    :preview="false"
                 >
                     <template #placeholder>
                         <a-spin :spinning="true">
@@ -105,8 +106,37 @@
         storageStore.setItem('randomImg', JSON.stringify(res));
     });
 
-    const reqImg = (w: number, h: number) => new Promise((resolve, reject) => {
+    const qiniuImgArr = [
+        'https://imgcdn.huanjutang.com/assets/588-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/249-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/113-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/405-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/911-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/216-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/916-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/964-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/218-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/200-4000x4000.jpeg',
+        'https://imgcdn.huanjutang.com/assets/331-4000x4000.jpeg',
+    ];
+    
+    const reqImgPicsum = (w: number, h: number) => new Promise((resolve, reject) => {
         fetch(`https://picsum.photos/${w}/${h}`).then(res => res.url).then(res => {
+            // resolve(window.URL.createObjectURL(res));
+            resolve(res);
+        }).catch(err => {
+            console.log(err);
+            reject(err);
+        });
+    });
+    const reqImgQiniu = (w: number, h: number) => new Promise((resolve, reject) => {
+        // const suffix = `?imageView2/1/w/${w}/h/${h}`;
+        const imgUrl = qiniuImgArr[Math.floor(qiniuImgArr.length * Math.random())];
+        const offsetX = Math.floor((4000 - w) * Math.random());
+        const offsetY = Math.floor((4000 - h) * Math.random());
+        const suffix = `?imageMogr2/crop/!${w}x${h}a${offsetX}a${offsetY}`;
+
+        fetch(`${imgUrl}${suffix}`).then(res => res.url).then(res => {
             // resolve(window.URL.createObjectURL(res));
             resolve(res);
         }).catch(err => {
@@ -132,7 +162,7 @@
             // 修改为单独请求
             for (let i = 0; i < count; i++) {
                 // reqArr.push(reqImg(width, height));
-                reqImg(width, height).then(res => {
+                reqImgQiniu(width, height).then(res => {
                     imgUrlArr.value.push(res as string);
                 }).finally(() => {
                     endDeal();

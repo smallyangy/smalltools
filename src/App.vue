@@ -69,7 +69,7 @@
             </a-layout-sider>
             <a-layout
                 class="body"
-                style="padding: 24px 24px 24px;"
+                style="padding: 24px;"
             >
                 <!-- <a-breadcrumb style="margin: 16px 0;">
                     <a-breadcrumb-item>Home</a-breadcrumb-item>
