@@ -1,0 +1,27 @@
+name: syncToGitee
+on:
+  push:
+    branches:
+      - gh-pages
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/smallyangy
+          dst: gitee/SmallYangY
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token:  ${{ secrets.GITEE_TOKEN }}
+          force_update: true
+          static_list: smalltools
+          debug: true
+
+      - name: Build Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: small_yangy@foxmail.com
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: SmallYangY/smalltools
+          branch: gh-pages

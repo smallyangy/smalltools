@@ -1,0 +1,1 @@
+.zui-divide:after,.zui-divide:before{height:1px;background:var(--color);flex:1}.zui-divide{position:relative;text-align:center;display:flex;align-items:center;justify-content:center;color:var(--color)}.zui-divide:before{content:""}.zui-divide:after{content:""}.url-display{word-break:break-all}
