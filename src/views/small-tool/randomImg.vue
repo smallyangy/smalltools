@@ -120,15 +120,15 @@
         'https://imgcdn.huanjutang.com/assets/331-4000x4000.jpeg',
     ];
     
-    const reqImgPicsum = (w: number, h: number) => new Promise((resolve, reject) => {
-        fetch(`https://picsum.photos/${w}/${h}`).then(res => res.url).then(res => {
-            // resolve(window.URL.createObjectURL(res));
-            resolve(res);
-        }).catch(err => {
-            console.log(err);
-            reject(err);
-        });
-    });
+    // const reqImgPicsum = (w: number, h: number) => new Promise((resolve, reject) => {
+    //     fetch(`https://picsum.photos/${w}/${h}`).then(res => res.url).then(res => {
+    //         // resolve(window.URL.createObjectURL(res));
+    //         resolve(res);
+    //     }).catch(err => {
+    //         console.log(err);
+    //         reject(err);
+    //     });
+    // });
     const reqImgQiniu = (w: number, h: number) => new Promise((resolve, reject) => {
         // const suffix = `?imageView2/1/w/${w}/h/${h}`;
         const imgUrl = qiniuImgArr[Math.floor(qiniuImgArr.length * Math.random())];
